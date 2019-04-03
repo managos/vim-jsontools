@@ -16,8 +16,9 @@ class JsonToolsPlugin(object):
 
     @pynvim.function('JsonToolsCheckValidateFormat', sync=True)
     def validate(self, args):
+        '''formatチェック'''
         try:
-            d = json.loads(self._get_text())
+            json.loads(self._get_text())
             self.nvim.out_write('json ok\n')
         except Exception as e:
             self.nvim.err_write('{}\n'.format(str(e)))

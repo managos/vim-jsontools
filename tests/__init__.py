@@ -12,7 +12,7 @@ class TestSomething(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.nvim = attach('socket', path='/tmp/nvim')
-        self.nvim.command('e {}/tests/data.json'.format(BASE_DIR))
+        self.nvim.command('tabnew {}/tests/data.json'.format(BASE_DIR))
         self.plugin = JsonToolsPlugin(self.nvim)
 
     def test_get_text(self):
